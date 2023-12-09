@@ -71,9 +71,8 @@ public class EditMedicationView extends AppCompatActivity {
             fetchedDuration = Integer.parseInt(cursor.getString(cursor.getColumnIndex(DatabaseHelper.COLUMN_HOURS_BETWEEN)));
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
                 fetchedLast = LocalDateTime.parse(cursor.getString(cursor.getColumnIndex(DatabaseHelper.COLUMN_LAST_TAKEN)));
-                fetchedNext = fetchedLast.plusHours(fetchedDuration);
+                fetchedNext = LocalDateTime.parse(cursor.getString(cursor.getColumnIndex(DatabaseHelper.COLUMN_NEXT_DOSE)));
             }
-
         }
         DateTimeFormatter formatter = null;
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
