@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">MedScheduler</string>
+    <string name="add">Add a new medication</string>
+    <string-array name="duration">
+        <item>Hours</item>
+        <item>Days</item>
+        <item>Weeks</item>
+    </string-array>
+</resources>
