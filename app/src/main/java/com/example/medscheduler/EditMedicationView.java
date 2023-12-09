@@ -37,7 +37,7 @@ public class EditMedicationView extends AppCompatActivity {
     EditText editTextLast, editTextName, editTextNumber;
     String id, last;
     Spinner spinner;
-    Button takeNow;
+    Button takeNow, cancelButton;
     LocalDateTime fetchedNext, fetchedLast;
     String fetchedName, fetchedId;
     int fetchedDuration;
@@ -53,6 +53,7 @@ public class EditMedicationView extends AppCompatActivity {
         editTextLast = findViewById(R.id.editTextLast);
         editTextNumber = findViewById(R.id.editTextNumber);
         takeNow = findViewById(R.id.btnDose);
+        cancelButton = findViewById(R.id.buttonCancel);
         spinner = findViewById(R.id.spinnerChoice);
         String [] spinnerOptions = getResources().getStringArray(R.array.duration);
         //adapter to use array in spinner
@@ -117,7 +118,12 @@ public class EditMedicationView extends AppCompatActivity {
                 showDateTimePicker();
             }
         });
-
+        cancelButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                backToMain();
+            }
+        });
 
     }
     public void showDateTimePicker() {
